@@ -51,6 +51,10 @@ button {
 }
 
 @font-face {
+  font-family: "RubikMoonrocks-Regular";
+  src: url("../../src/assets/fonts/RubikMoonrocks-Regular.ttf") format("truetype");
+}
+@font-face {
   font-family: "Poppins-Bold";
   src: url("../../src/assets/fonts/Poppins-Bold.ttf") format("truetype");
 }

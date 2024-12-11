@@ -113,7 +113,7 @@ class UserModel {
   //Assigning pendingUserOTP to the user before inputting OTP
   pendingUserOTP(arr) {
     this.userPending = new this.UserCreate(...arr.slice(0, 5), arr[6]);
-    console.log(this.userPending);
+    console.log(this.userPending.otp);
   }
   //Pushing user to db
   async pushUserToDB(user) {

@@ -1,7 +1,6 @@
 import emailjs from "emailjs-com";
 import UserModel from "../model/userModel";
 import UserView from "../view/userView";
-import { setUserLocation, spawnMap } from "../map";
 
 const checkCurrentUser = () => {
   if (UserModel.currentUser) window.location.href = "index.html";
@@ -60,28 +59,6 @@ const sendEmail = (pendingUserOTP) => {
     });
 };
 
-const getLocation = async () => {
-  try {
-    const coords = await setUserLocation();
-    if (!coords) throw new Error("Could not access map");
-
-    UserView.submitAddress(() => {
-      const address = UserView.inputAddress.value;
-      if (address === "") {
-        UserView.notifDisplay(["Please enter your current address"]);
-        return;
-      }
-      const userPending = UserModel.userPending;
-      userPending.location.address = address;
-      userPending.location.coords = coords;
-      UserModel.pushUserToDB(userPending);
-      window.location.href = "login.html";
-    });
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 const checkOTP = async () => {
   const errors = [];
   const inputOtp = document.querySelector(".input-otp").value;
@@ -98,19 +75,18 @@ const checkOTP = async () => {
     return;
   }
 
-  UserView.changeToMapPage();
-  UserView.notifDisplay(["OTP verified"], "green");
-  getLocation();
+  await UserModel.pushUserToDB(UserModel.userPending);
+  window.location.href = "login.html";
 };
 
-const registerUser = () => {
+const registerUser = async () => {
   const validatedInput = validateRegistration(returnInputView());
 
   if (!validatedInput) return;
 
   UserModel.pendingUserOTP(validatedInput);
 
-  sendEmail(UserModel.userPending);
+  // sendEmail(UserModel.userPending);
 
   UserView.changeToOtpPage();
   UserView.notifDisplay(["Check your email"], "green");

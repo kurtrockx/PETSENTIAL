@@ -22,7 +22,9 @@ main {
   flex-direction: column;
   align-items: center;
   gap: var(--icon-gap);
-  background: var(--light-black);
+  background: #fdd995;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 .nav-option {
   text-decoration: none;
@@ -62,18 +64,30 @@ main {
   height: 8rem;
   display: flex;
   align-items: center;
-  background: var(--white);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .search-product-container {
   width: max-content;
-  margin: 2rem auto;
+  position: relative;
+  margin-right: auto;
+  right: -2rem;
+  background: white;
   border-bottom: 1px solid black;
+  border: 1px solid #000;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  padding-left: 5rem;
+  position: relative;
+  overflow: hidden;
 }
 .search-icon-image {
+  position: absolute;
   object-fit: cover;
-  width: 1.25rem;
+  padding: 1rem;
+  height: 100%;
   aspect-ratio: 1/1;
+  top: 0;
+  left: 0;
+  background: #f8853e;
 }
 .logout-admin {
   margin-top: auto;
@@ -89,25 +103,27 @@ main {
   flex: 1;
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
   gap: 2rem;
 }
 .product-container {
+  height: 8rem;
   align-items: center;
   display: grid;
   padding-right: var(--small-font-size);
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   border-radius: 0.5rem;
-  background: var(--white);
+  background: #fdd995;
   font-size: var(--product-font-size);
+  align-content: center;
   overflow: hidden;
   cursor: default;
   transition: scale 0.25s ease;
+  font-family: Poppins-Bold;
 }
 .product-container:hover {
-  scale: 1.025;
+  scale: 1.015;
 }
 .product-container > * {
   display: flex;
@@ -150,7 +166,7 @@ main {
   border-radius: 0.25rem;
   font-weight: 600;
   color: var(--white);
-  background: var(--black);
+  background: red;
   cursor: pointer;
   transition: all 0.1s linear;
 }
@@ -172,6 +188,7 @@ main {
 }
 .add-main-container {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   padding: var(--big-font-size) var(--small-font-size);
   gap: var(--big-font-size);
@@ -249,12 +266,12 @@ main {
 }
 .transaction-header {
   font-weight: 600;
-  text-align: center;
+  text-align: right;
+  margin-right: 2rem;
   padding-block: var(--big-font-size);
   font-size: var(--big-font-size);
 
   color: var(--light-black);
-  text-shadow: 2px 2px 0 var(--primary-color);
 }
 .transactions-container {
   margin: auto;

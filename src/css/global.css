@@ -130,9 +130,10 @@ button {
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  background: white;
-  color: #2cf651;
-  border: 1px solid #2cf651;
+  background: #feeeab;
+  background: #feeeab;
+  color: #f8853e;
+  border: 1px solid #feeeab;
   text-align: center;
 }
 .underline {

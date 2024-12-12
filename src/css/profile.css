@@ -18,9 +18,10 @@ main {
   gap: var(--small-font-size);
 }
 .profile-container {
+  margin-top: 2rem;
   width: 100%;
   height: 100%;
-  border: 1px solid var(--black);
+  background: #feeeab;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -97,6 +98,7 @@ main {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 0.5rem;
+  color: #f8853e
 }
 .detail-value {
   grid-column: 2/-1;

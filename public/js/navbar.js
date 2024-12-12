@@ -1,6 +1,5 @@
 import UserModel from "../../src/js/model/userModel";
 import phLogo from "../../src/assets/images/logo.png";
-import phLogo2 from "../../src/assets/images/phLogo2.png";
 
 const checkAdmin = () => {
   if (!UserModel.currentUser) return;
@@ -29,9 +28,13 @@ const insertNavbar = () => {
         <div class="navlink-logo-pet">
             <a href="index.html" class="navlink">HOME</a>
             <a href="store.html" class="navlink">STORE</a>
-            <a href="cart.html" class="navlink">CART  </a>
+            <a href="cart.html" class="navlink">CART</a>
             <a href="profile.html" class="navlink">PROFILE</a>
-            <a href="index.html" class="navlink navlink-logout">LOG OUT</a>
+            <a href="${
+              !UserModel.currentUser ? "login.html" : "index.html"
+            }" class="navlink navlink-logout">${
+              !UserModel.currentUser ? "LOGIN" : `${UserModel.currentUser.username}`
+            }</a>
           </div>
       </div>
     </nav>

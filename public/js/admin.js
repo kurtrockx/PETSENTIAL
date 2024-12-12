@@ -1,4 +1,4 @@
-import phLogo2 from "../../src/assets/images/phLogo2.png";
+import logo from "../../src/assets/images/logo.png";
 import historyIcon from "../../src/assets/svg/history.svg";
 import userIcon from "../../src/assets/svg/users.svg";
 import plusIcon from "../../src/assets/svg/plus.svg";
@@ -23,7 +23,7 @@ const spawnSideNav = () => {
   const html = `
     <nav class="side-nav">
       <div class="phLogo">
-        <img src="${phLogo2}" class="phLogo-image" />
+        <img src="${logo}" class="phLogo-image" />
       </div>
       <a href="adminTransactions.html" class="nav-option add-products">
         <img src="${historyIcon}" class="side-nav-images" />
@@ -33,9 +33,6 @@ const spawnSideNav = () => {
       </a>
       <a href="adminEditProducts.html" class="nav-option edit-products">
         <img src="${editIcon}" class="side-nav-images" />
-      </a>
-      <a href="adminChat.html" class="nav-option users-list">
-        <img src="${userIcon}" class="side-nav-images" />
       </a>
       <div class="nav-option logout-admin">
         <img src="${logoutIcon}" class="side-nav-images" />

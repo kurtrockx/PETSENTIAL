@@ -1,4 +1,4 @@
-import phLogo2 from "../../src/assets/images/phLogo2.png";
+import logo from "../../src/assets/images/logo.png";
 import facebookIcon from "../../src/assets/svg/facebook.svg";
 import instagramIcon from "../../src/assets/svg/instagram.svg";
 import twitterIcon from "../../src/assets/svg/twitter.svg";
@@ -8,16 +8,16 @@ const footerHTML = `
     <footer>
       <div class="footer-content">
         <div class="logo-left">
-          <img src="${phLogo2}" class="logo-image" />
-          <div class="logo-title">PORMA HUB</div>
+          <img src="${logo}" class="logo-image" />
+          <div class="logo-title">PETSENTIAL</div>
         </div>
         <div class="quick-links">
           <div class="quick-links-content">
             <div class="quick-links-header">QUICK LINKS</div>
             <div class="quick-links-container">
               <a class="quick-links-links" href="profile.html">User Profile</a>
-              <a class="quick-links-links" href="cart.html">View Cart</a>
               <a class="quick-links-links" href="store.html">Store</a>
+              <a class="quick-links-links" href="appointment.html">Services</a>
               <a class="quick-links-links" href="about.html">About Us</a>
             </div>
           </div>
@@ -37,7 +37,7 @@ const footerHTML = `
           /></a>
         </div>
       </div>
-      <div class="rights">© 2024 PORMA HUB. All Rights Reserved.</div>
+      <div class="rights">© 2024 PETSENTIAL. All Rights Reserved.</div>
     </footer>
 `;
 document.body.insertAdjacentHTML("beforeend", footerHTML);

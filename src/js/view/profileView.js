@@ -27,9 +27,6 @@ class ProfileView {
     this.modalEmail = document.querySelector(".modal-email");
     this.modalAddress = document.querySelector(".modal-address");
     this.modalContact = document.querySelector(".modal-contact");
-    this.changeCredentialsButton = document.querySelector(
-      ".change-credentials-button"
-    );
     this.modalBackground = document.querySelector(
       ".user-credentials-background"
     );
@@ -70,7 +67,7 @@ class ProfileView {
                 </div>
                 <div class="item-name">${item.name}</div>
               </div>
-              <div class="size">${item.size}</div>
+              <div class="size">$${item.price}</div>
               <div class="quantity">${item.quantity}</div>
               <div class="total-price">$${(item.quantity * item.price).toFixed(
                 2
@@ -101,10 +98,6 @@ class ProfileView {
     return `
           <div class="details-container">
             <div class="detail">
-              <div class="detail-bold">Name</div>
-              <div class="detail-value">${user.firstName} ${user.lastName}</div>
-            </div>
-            <div class="detail">
               <div class="detail-bold">Username</div>
               <div class="detail-value">${user.username}</div>
             </div>
@@ -113,14 +106,9 @@ class ProfileView {
               <div class="detail-value">${user.email}</div>
             </div>
             <div class="detail">
-              <div class="detail-bold">Address</div>
-              <div class="detail-value">${user.location.address}</div>
-            </div>
-            <div class="detail">
               <div class="detail-bold">Contact No.</div>
               <div class="detail-value">${user.contactNumber}</div>
             </div>
-            <button class="open-modal-button">CHANGE USER CREDENTIALS</button>
           </div>
 `;
   }

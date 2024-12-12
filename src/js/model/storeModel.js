@@ -11,7 +11,6 @@ class ProductModel {
       this.thumbnail = product.thumbnail;
       this.fullQualityPic = product.fullQualityPic;
       this.quantity = quantity;
-      this.size = size;
     }
   };
   productFetch = async () => {

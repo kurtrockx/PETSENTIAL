@@ -28,9 +28,6 @@ const initialRenderProducts = async () => {
 
 const searchProduct = async () => {
   try {
-    StoreView.searchCategoryButton.forEach((category) =>
-      category.classList.remove("underline")
-    );
     const data = await StoreModel.productFetch();
     if (!data) throw new Error("No data found!");
     const searchTerm = data.filter((p) =>
@@ -42,49 +39,6 @@ const searchProduct = async () => {
     );
     const searchResult = [...searchTerm, ...dataWithoutSearchedTerm];
     StoreView.renderProducts(searchResult);
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const searchByCategory = async (e) => {
-  try {
-    const data = await StoreModel.productFetch();
-    if (!data) throw new Error("No data fetched");
-
-    const category = e.target.dataset?.category;
-    const allCategories = e.target
-      .closest(".search-window")
-      ?.querySelectorAll(".search-category-button");
-
-    allCategories.forEach((cat) => cat.classList.remove("underline"));
-    e.target.classList.add("underline");
-
-    const filteredProducts = data.filter((prod) => {
-      return prod.category === category;
-    });
-
-    StoreView.renderProducts(filteredProducts);
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const initCategory = async () => {
-  try {
-    const initCategory = JSON.parse(localStorage.getItem("dashboardCategory"));
-    if (!initCategory) return;
-
-    const data = await StoreModel.productFetch();
-    if (!data) throw new Error("No data fetched");
-
-    const filteredProducts = data.filter((prod) => {
-      return prod.category === initCategory;
-    });
-
-    StoreView.renderProducts(filteredProducts);
-
-    localStorage.removeItem("dashboardCategory");
   } catch (err) {
     console.error(err);
   }
@@ -139,18 +93,11 @@ const checkoutItem = async () => {
       const inputQuantity =
         +productModalContainer.querySelector(".input-quantity").value;
 
-      const sizeRadio =
-        productModalContainer.querySelectorAll('input[name="size"]');
 
-      let selectedSize = "M";
-      sizeRadio.forEach((r) => {
-        if (r.checked) selectedSize = r.value;
-      });
 
       const productToAdd = new StoreModel.Product(
         productMatch,
         inputQuantity,
-        selectedSize
       );
 
       StoreView.paymentContainer.classList.remove("gone");
@@ -261,25 +208,13 @@ const closePaypal = () => {
     });
 };
 
-const refresh = () => {
-  const refreshBack = document
-    .querySelector(".refresh-back")
-    .addEventListener("click", () => {
-      renderProducts();
-    });
-};
-
 const init = async () => {
   initialRenderProducts();
-  initCategory();
-  StoreView.clearCategory(renderProducts);
   modalData();
   addToCart();
   StoreView.searchInput(searchProduct);
-  StoreView.categorizeProducts(searchByCategory);
   StoreModel.assignCart();
   checkoutItem();
   closePaypal();
-  refresh();
 };
 init();

@@ -1,4 +1,3 @@
-import { hoverProduct } from "../../../public/js/store";
 import xIcon from "../../../src/assets/svg/x.svg";
 
 class ProductView {
@@ -44,22 +43,19 @@ class ProductView {
       );
       this.productGridContainer.insertAdjacentHTML("beforeend", html);
     });
-
-    hoverProduct();
   }
 
   productHTML(productThumbnail, productName, productPrice, productID) {
     return `
         <div class="product-container" data-product-id="${productID}">
-            <div class="product-background">Add to cart</div>
             <div class="product">
                 <img
                     src="${productThumbnail}"
                     class="product-thumbnail-image"
                 />
                 <div class="product-initial-description">
+                <p class="product-initial-price">P${productPrice}</p>
                     <p class="product-initial-name">${productName}</p>
-                    <p class="product-initial-price">P${productPrice}</p>
                 </div>
             </div>
         </div>
@@ -83,33 +79,18 @@ class ProductView {
   productModalHTML(product) {
     return `
         <div class="product-modal-container" data-product-id="${product._id.$oid}">
+          <img src="${xIcon}" class="exit-modal-button" />
           <div class="product-modal-image">
             <img src="${product.fullQualityPic}" class="product-full-image" />
           </div>
           <div class="product-modal-details">
-            <img src="${xIcon}" class="exit-modal-button" />
             <div class="product-modal-header">
-            <div class="product-modal-stock">${product.stock} unit(s) left!</div>
             ${product.name}</div>
-            <div class="product-size-radio-container">
-              <input type="radio" style="display: none" id="XS" name="size" value="XS" />
-              <label class="product-size-radio" for="XS">XS</label>
-              <input type="radio" style="display: none" id="S" name="size" value="S" />
-              <label class="product-size-radio" for="S">S</label>
-              <input type="radio" style="display: none" id="M" name="size" value="M" checked/>
-              <label class="product-size-radio" for="M">M</label>
-              <input type="radio" style="display: none" id="L" name="size" value="L" />
-              <label class="product-size-radio" for="L">L</label>
-              <input type="radio" style="display: none" id="XL" name="size" value="XL" />
-              <label class="product-size-radio" for="XL">XL</label>
-              <input type="radio" style="display: none" id="XXL" name="size" value="XXL" />
-              <label class="product-size-radio" for="XXL">XXL</label>
-            </div>
             <div class="product-modal-bottom-section">
               <input type="number" class="input-quantity" value="1" min="1" max="${product.stock}"/>
               <button class="add-to-cart-button">ADD TO CART</button>
               </div>
-              <button class="buy-now-button">BUY NOW <span class="">${(product.price)}</span></button>
+              <button class="buy-now-button">BUY NOW <span class="">${product.price}</span></button>
           </div>
         </div>
     `;

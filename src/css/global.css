@@ -11,7 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 :root {
-  --content-width: 80rem;
+  --content-width: 90rem;
 
   --primary-color: #ff9000;
   --secondary-color: #e98400;

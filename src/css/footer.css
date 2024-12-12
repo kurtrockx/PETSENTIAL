@@ -1,7 +1,7 @@
 footer {
   width: 100%;
   padding: var(--medium-font-size) 0.5rem;
-  background: var(--black);
+  background: #f8853e;
 }
 .footer-content {
   position: relative;

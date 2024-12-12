@@ -45,6 +45,7 @@ main > * {
   font-size: 2rem;
 }
 .buy-now-button {
+  text-decoration: none;
   width: max-content;
   margin-left: auto;
   margin-top: auto;
@@ -53,6 +54,10 @@ main > * {
   color: white;
   background: #faaf6a;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+.buy-now-button:hover {
+  translate: 0 -2px;
 }
 /* 
 <main>

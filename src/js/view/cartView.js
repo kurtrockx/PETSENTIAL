@@ -41,9 +41,6 @@ class CartView {
         <img class="cart-item-image" src="${product.thumbnail}" alt="" />
         <div class="cart-item-description">
         <div class="cart-item-name">${product.name}</div>
-        <div class="cart-item-size">
-            Size: <span id="cart-item-size-bold">${product.size}</span>
-        </div>
         </div>
     </div>
     <div class="cart-item-price">P${product.price}</div>

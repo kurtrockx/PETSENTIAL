@@ -58,7 +58,7 @@ const changeQuantity = async (e) => {
     .closest(".cart-item")
     ?.querySelector("#cart-item-size-bold")?.textContent;
 
-  await CartModel.changeQuantityDB(cartItemId, itemSize, newQuantity);
+  await CartModel.changeQuantityDB(cartItemId, newQuantity);
   spawnCheckoutItems();
 };
 

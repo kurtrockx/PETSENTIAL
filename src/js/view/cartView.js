@@ -1,4 +1,4 @@
-import xIcon from "../../assets/svg/x.svg";
+import trashIcon from "../../assets/svg/trash.svg";
 
 class CartView {
   cartItemContainer;
@@ -35,7 +35,7 @@ class CartView {
     return `
     <div class="cart-item" data-cart-item="${product._id.$oid}">
     <div class="cart-item-delete">
-        <img src="${xIcon}" class="cart-item-delete-image" />
+        <img src="${trashIcon}" class="cart-item-delete-image" />
     </div>
     <div class="cart-item-image-name">
         <img class="cart-item-image" src="${product.thumbnail}" alt="" />
@@ -88,7 +88,7 @@ class CartView {
           <div class="checkout-item">
             <div class="checkout-item-quantity">${item.quantity}x</div>
             <div class="checkout-item-name">
-              ${item.name} <span id="checkout-item-size">${item.size}</span>
+              ${item.name} <span id="checkout-item-size"></span>
             </div>
             <div class="checkout-item-price">P${(
               item.price * item.quantity

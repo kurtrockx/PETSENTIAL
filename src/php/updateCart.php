@@ -10,10 +10,9 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 $userId = $input['userId'];
 $cartItemId = strval($input['cartItemId']);  // Ensure it's a string
-$itemSize = $input['itemSize'];  // Get item size
 $newQuantity = $input['quantity'];
 
-if (!$userId || !$cartItemId || !$itemSize || !isset($newQuantity)) {
+if (!$userId || !$cartItemId || !isset($newQuantity)) {
     echo json_encode(['error' => 'Missing userId, cartItemId, itemSize, or quantity']);
     exit;
 }
@@ -31,9 +30,9 @@ try {
     $updated = false;
     foreach ($user['cart'] as &$item) {
         // Check if both cartItemId and itemSize match
-        if (trim($item['_id']['$oid']) === trim($cartItemId) && $item['size'] === $itemSize) {
+        if (trim($item['_id']['$oid']) === trim($cartItemId)) {
             // Update the quantity of the matched cart item
-            $item['quantity'] = (int)$newQuantity;
+            $item['quantity'] = (int) $newQuantity;
             $updated = true;
             break;
         }

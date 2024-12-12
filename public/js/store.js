@@ -18,5 +18,4 @@ setInterval(() => {
   if (x === 2) html = bannerImage.src = `${slide2}`;
   if (x === 3) html = bannerImage.src = `${slide3}`;
   x++;
-  console.log(x);
 }, 1000);

@@ -57,6 +57,26 @@ const modalData = async () => {
   }
 };
 
+const searchByCategory = () => {
+  document.addEventListener("click", async (e) => {
+    try {
+      const data = await StoreModel.productFetch();
+      if (!data) throw new Error("No data fetched");
+
+      const category = e.target.dataset?.category;
+      if (!category) return;
+
+      const filteredProducts = data.filter((prod) => {
+        return prod.category === category;
+      });
+
+      StoreView.renderProducts(filteredProducts);
+    } catch (err) {
+      console.error(err);
+    }
+  });
+};
+
 const closeModal = () => {
   StoreView.closeModalButton((e) => {
     const exitModalButton = e.target.closest(".exit-modal-button");
@@ -93,12 +113,7 @@ const checkoutItem = async () => {
       const inputQuantity =
         +productModalContainer.querySelector(".input-quantity").value;
 
-
-
-      const productToAdd = new StoreModel.Product(
-        productMatch,
-        inputQuantity,
-      );
+      const productToAdd = new StoreModel.Product(productMatch, inputQuantity);
 
       StoreView.paymentContainer.classList.remove("gone");
       const paypalResponse = await paypalCheckout(
@@ -213,6 +228,7 @@ const init = async () => {
   modalData();
   addToCart();
   StoreView.searchInput(searchProduct);
+  searchByCategory();
   StoreModel.assignCart();
   checkoutItem();
   closePaypal();

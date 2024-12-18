@@ -24,7 +24,7 @@ const collectAppointmentData = () => {
 
 // Function to add the appointment to the database
 async function addAppointmentDB(userId, appointment) {
-  const apiUrl = "http://localhost/pormaHUB/src/php/addToCart.php";
+  const apiUrl = "http://localhost/PETSENTIALS/src/php/addToCart.php";
   const requestData = {
     action: "addAppointment",
     userId,

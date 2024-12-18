@@ -2,7 +2,7 @@ class AdminTransactionsModel {
   async updateTransactionStatus(cardID, newStatus) {
     try {
       const response = await fetch(
-        "http://localhost/pormaHUB/src/php/updateTransactionStatus.php",
+        "http://localhost/PETSENTIALS/src/php/updateTransactionStatus.php",
         {
           method: "POST",
           headers: {

@@ -7,7 +7,7 @@ class ProfileModel {
     const userId = UserModel.currentUser._id.$oid;
     try {
       const res = await fetch(
-        "http://localhost/pormaHUB/src/php/currentPull.php",
+        "http://localhost/PETSENTIALS/src/php/currentPull.php",
         {
           method: "POST",
           headers: {
@@ -28,7 +28,7 @@ class ProfileModel {
     const userId = UserModel.currentUser._id.$oid;
     try {
       const res = await fetch(
-        "http://localhost/pormaHUB/src/php/currentPull.php",
+        "http://localhost/PETSENTIALS/src/php/currentPull.php",
         {
           method: "POST",
           headers: {
@@ -49,7 +49,7 @@ class ProfileModel {
     console.log(userData);
     try {
       const response = await fetch(
-        "http://localhost/pormaHUB/src/php/updateUser.php",
+        "http://localhost/PETSENTIALS/src/php/updateUser.php",
         {
           method: "POST",
           headers: {

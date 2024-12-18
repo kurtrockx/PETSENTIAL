@@ -6,7 +6,7 @@ require '../../vendor/autoload.php';
 use MongoDB\BSON\ObjectId;
 
 require_once './includes/atlas.php';
-$db = $client->pormaHUB;
+$db = $client->PETSENTIALS;
 $collection = $db->usersCollection;
 
 // Get the raw POST data

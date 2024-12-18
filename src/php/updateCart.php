@@ -3,7 +3,7 @@ require_once "./includes/cors.php";
 require '../../vendor/autoload.php';
 
 require_once './includes/atlas.php';
-$db = $client->pormaHUB;
+$db = $client->PETSENTIALS;
 $collection = $db->usersCollection;
 
 $input = json_decode(file_get_contents('php://input'), true);

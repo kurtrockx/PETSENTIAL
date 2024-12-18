@@ -4,7 +4,7 @@ require_once "./includes/cors.php";
 require '../../vendor/autoload.php'; // Composer autoload for MongoDB
 require_once './includes/atlas.php';
 
-$db = $client->pormaHUB; // Database connection
+$db = $client->PETSENTIALS; // Database connection
 $collection = $db->usersCollection;
 
 $inputData = file_get_contents("php://input");

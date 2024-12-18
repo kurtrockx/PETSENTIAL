@@ -3,7 +3,7 @@ require_once "./includes/cors.php";  // Handle CORS headers
 require '../../vendor/autoload.php';  // MongoDB Client Autoload
 
 require_once './includes/atlas.php';
-$db = $client->pormaHUB;
+$db = $client->PETSENTIALS;
 $collection = $db->productsCollection;
 
 // Read the JSON input from the request body

@@ -13,7 +13,7 @@ class AdminAddModel {
     console.log(product);
     try {
       const res = await fetch(
-        "http://localhost/pormaHUB/src/php/productPush.php",
+        "http://localhost/PETSENTIALS/src/php/productPush.php",
         {
           method: "POST",
           headers: {

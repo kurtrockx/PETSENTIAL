@@ -16,7 +16,7 @@ class ProductModel {
   productFetch = async () => {
     try {
       const res = await fetch(
-        "http://localhost/pormaHUB/src/php/productsPull.php",
+        "http://localhost/PETSENTIALS/src/php/productsPull.php",
         {
           headers: {
             "Content-Type": "application/json",
@@ -34,7 +34,7 @@ class ProductModel {
   async addToCart(user, product) {
     try {
       const response = await fetch(
-        "http://localhost/pormaHUB/src/php/addToCart.php",
+        "http://localhost/PETSENTIALS/src/php/addToCart.php",
         {
           method: "POST",
           headers: {

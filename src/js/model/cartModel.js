@@ -14,7 +14,7 @@ class CartModel {
     const userId = UserModel.currentUser._id.$oid;
     try {
       const res = await fetch(
-        "http://localhost/pormaHUB/src/php/currentPull.php",
+        "http://localhost/PETSENTIALS/src/php/currentPull.php",
         {
           method: "POST",
           headers: {
@@ -35,7 +35,7 @@ class CartModel {
     const userId = UserModel.currentUser._id.$oid;
     try {
       const response = await fetch(
-        "http://localhost/pormaHUB/src/php/updateCart.php",
+        "http://localhost/PETSENTIALS/src/php/updateCart.php",
         {
           method: "POST",
           headers: {
@@ -65,7 +65,7 @@ class CartModel {
 
     try {
       const res = await fetch(
-        "http://localhost/pormaHUB/src/php/deleteCartItem.php",
+        "http://localhost/PETSENTIALS/src/php/deleteCartItem.php",
         {
           method: "DELETE",
           headers: {
@@ -96,7 +96,7 @@ class CartModel {
     const user = UserModel.currentUser;
     try {
       const response = await fetch(
-        "http://localhost/pormaHUB/src/php/addToHistory.php",
+        "http://localhost/PETSENTIALS/src/php/addToHistory.php",
         {
           method: "POST",
           headers: {
@@ -130,7 +130,7 @@ class CartModel {
 
     try {
       const response = await fetch(
-        "http://localhost/pormaHUB/src/php/addToHistory.php",
+        "http://localhost/PETSENTIALS/src/php/addToHistory.php",
         {
           method: "POST",
           headers: {

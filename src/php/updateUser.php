@@ -6,7 +6,7 @@ require '../../vendor/autoload.php'; // Load Composer's autoloader for MongoDB
 require_once './includes/atlas.php'; // Assuming this file connects to your MongoDB
 
 // Database and collection initialization
-$db = $client->pormaHUB; // Use the 'pormaHUB' database
+$db = $client->PETSENTIALS; // Use the 'pormaHUB' database
 $collection = $db->usersCollection; // Use the 'usersCollection' collection
 
 // Get the raw POST data

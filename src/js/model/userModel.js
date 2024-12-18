@@ -32,7 +32,7 @@ class UserModel {
   async pullUsersFromDB() {
     try {
       const res = await fetch(
-        "http://localhost/pormaHUB/src/php/userPull.php",
+        "http://localhost/PETSENTIALS/src/php/userPull.php",
         {
           headers: {
             "Content-Type": "application/json",
@@ -113,7 +113,7 @@ class UserModel {
   async pushUserToDB(user) {
     try {
       const res = await fetch(
-        "http://localhost/pormaHUB/src/php/userPush.php",
+        "http://localhost/PETSENTIALS/src/php/userPush.php",
         {
           method: "POST",
           headers: {

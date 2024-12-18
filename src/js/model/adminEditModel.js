@@ -2,7 +2,7 @@ class AdminModel {
   async changeStockDB(productName, newStock) {
     try {
       const response = await fetch(
-        "http://localhost/pormaHUB/src/php/updateStock.php",
+        "http://localhost/PETSENTIALS/src/php/updateStock.php",
         {
           method: "POST",
           headers: {
@@ -27,7 +27,7 @@ class AdminModel {
   async deleteProductDB(productName) {
     try {
       const response = await fetch(
-        "http://localhost/pormaHUB/src/php/deleteProduct.php",
+        "http://localhost/PETSENTIALS/src/php/deleteProduct.php",
         {
           method: "POST",
           headers: {

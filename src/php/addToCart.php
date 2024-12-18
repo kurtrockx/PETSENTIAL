@@ -5,7 +5,7 @@ require '../../vendor/autoload.php';
 
 
 require_once './includes/atlas.php';
-$db = $client->pormaHUB;
+$db = $client->PETSENTIALS;
 $collection = $db->usersCollection;
 
 $inputData = file_get_contents("php://input");
